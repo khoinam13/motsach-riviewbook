@@ -1,0 +1,27 @@
+<div class="mt-4">
+    <div class="row">
+        <div class="col-9 details-content">
+            <img onerror="this.src='../../../public/img/img err.PNG'" src="{{detail.image}}" alt="">
+            <h1>{{detail.name}}</h1>
+            <h5>Thể loại: <a href="">{{detail.category}}</a></h5>
+            <h5>Tác giả : <a href="">{{detail.author}}</a></h5>
+            <form class="form-comment" action="">
+                <div class="form-group">
+                <span>Gửi Bình Luận</span>
+                <input type="comment"
+                class="form-control" name="comment" id="comment" aria-describedby="helpId" placeholder="Viết bình luận công khai">
+                <button><i class="fa-regular fa-paper-plane submit-cmt "></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="col-3 sidebar">
+            <h3>Danh Mục</h3>
+            <ul>
+                <li><a href="">Tâm Lý - Kỹ Năng Sống</a></li>
+                <li><a href="">Kinh Tế - Quản Lý</a></li>
+                <li><a href="">Marketing - Bán hàng</a></li>
+                <li><a href="">Y Học - Sức Khỏe</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

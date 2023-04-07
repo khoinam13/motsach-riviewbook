@@ -1,0 +1,68 @@
+<div class="mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Tên Sách</th>
+                <th scope="col">Tác Giả</th>
+                <th scope="col">Thể Loại</th>
+                <th scope="col">Image</th>
+                <th scope="col"></th>
+                {{!-- <th scope="col">Thời gian tạo</th> --}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each books}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.author}}</td>
+                <td>{{this.category}}</td>
+                <td><img src="{{this.image}}" alt="" width="80px"></td>
+                <td>
+                    <a href="/details/{{this._id}}/edit" class="btn btn-link">Sửa</a>
+                    <a href="" class="btn btn-link" data-toggle="modal" data-target="#delete-detail-modal" data-id="{{this._id}}">Xoá</a>
+                </td>
+                {{!-- <td>{{this.createdAt}}</td> --}}
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{!-- confirm detele --}}
+<div id="delete-detail-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xoá Sách</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc chắn muốn xoá?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="detele-detail" type="button" class="btn btn-danger" data-dismiss="modal">Xoá bỏ</button>
+        <button type="button" class="btn btn-secondary">Huỷ</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- FROM DETELE HIDDEN --}}
+     <form name="detele-form" method="POST" ></form>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        var IdDetail
+        var deteleForm = document.forms['detele-form']
+        var BtndeteleDetail = document.getElementById('detele-detail')
+        $('#delete-detail-modal').on('show.bs.modal', function (event){
+            var button = $(event.relatedTarget)
+            IdDetail = button.data('id')
+        })
+        BtndeteleDetail.onclick = function(){
+            deteleForm.action = '/details/' + IdDetail + '?_method=DELETE';
+            deteleForm.submit()
+        }
+    })
+</script>
