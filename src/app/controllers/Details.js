@@ -4,7 +4,10 @@ class DetailsController{
     show(req,res,next){
         RiviewBook.findOne({slug: req.params.slug})
         .then(detail=>
-            res.render('details/show',{detail: mongooseToObject(detail)
+            res.render('details/show',{detail: mongooseToObject(detail),
+                messageAVT: req.flash('messageAVT'),
+                messageNone: req.flash('messageNone'),
+                messageOut: req.flash('messageOut')
             }))
         .catch(next)
     }

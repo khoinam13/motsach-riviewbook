@@ -6,27 +6,26 @@ class siteController{
         RiviewBook.find({})
         .then(books=>res.render('home',
          {
-            books: mutipMongooseToObject(books)
+            books: mutipMongooseToObject(books),
+            messageAVT: req.flash('messageAVT'),
+            messageNone: req.flash('messageNone'),
+            messageOut: req.flash('messageOut')
          }
         ))
                
         .catch(next);
     }
-    // seach(req,res,next){
-    //     const fromData  = req.query
-    //     const seach = fromData.searchBook
-    //     RiviewBook.find({})
-    //     .then(books=>{
-    //         const nameBook = books.map(book => book.name).join()
-    //         if(nameBook.includes(seach)=== true){
-    //             res.render('home',{
-    //                 books: mutipMongooseToObject(books)
-    //             })
-    //         }
-    //         else{
-    //             res.send('tim kiem that bai')
-    //         }
-    //     })
-    // }
+    seach(req,res,next){
+        const fromData  = req.query
+        const seach = fromData.searchBook.charAt(0).toUpperCase()
+        RiviewBook.find({})
+        .then(books=>{
+            var booksNew = books.filter(book => book.name.includes(seach))
+            res.render('home',{
+                books: mutipMongooseToObject(booksNew)
+            })
+        })
+        .catch(next)
+    }
 }
 module.exports = new siteController;

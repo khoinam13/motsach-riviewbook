@@ -1,4 +1,5 @@
 const path  = require('path');
+const  jwt = require('jsonwebtoken')
 const express = require('express');
 const handlebars = require('express-handlebars')
 const { extname } = require('path');

@@ -5,7 +5,10 @@ class MeDetailsController{
     index(req,res,next){
         RiviewBook.find({})
         .then(books =>res.render('me/details', {
-            books: mutipMongooseToObject(books)
+            books: mutipMongooseToObject(books),
+            messageAVT: req.flash('messageAVT'),
+            messageNone: req.flash('messageNone'),
+            messageOut: req.flash('messageOut')
         } ))
         .catch(next)
     }

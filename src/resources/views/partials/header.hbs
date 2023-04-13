@@ -10,9 +10,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Trang Chủ <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                {{!-- <li class="nav-item">
                     <a class="nav-link" href="/me/details">Sách của tôi</a>
-                </li>
+                </li> --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,19 +32,25 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li> --}}
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0" action="/seach">
                 <input name="searchBook" class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
             </form>
             <ul class="nav justify-content-end ">
                 <li class="nav-item">
-                    <a class="nav-link" href="/register">Đăng kí</a>
+                    <a class="nav-link" href="#">{{messageAVT}}</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#">{{messageOut}}</a>
+                </li>
+                <li class="nav-item" style="display: {{messageNone}};">
+                    <a class="nav-link" href="/register">Đăng kí</a>
+                </li>
+                <li class="nav-item" style="display: {{messageNone}};">
                     <a class="nav-link" href="/login">Đăng Nhập</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/details/create">Thêm sách</a>
+                    <a class="nav-link" href="/login/admin">Admin</a>
                 </li>
             </ul>
     </nav>
