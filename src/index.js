@@ -1,5 +1,7 @@
 const path  = require('path');
-const  jwt = require('jsonwebtoken')
+const dotenv = require('dotenv');
+var cookieParser = require('cookie-parser')
+dotenv.config();
 const express = require('express');
 const handlebars = require('express-handlebars')
 const { extname } = require('path');
@@ -7,6 +9,7 @@ const { extname } = require('path');
 // app.use(morgan('combined'))
 const app = express()
 const port = 3000
+app.use(cookieParser())
 //methodOverride
 const methodOverride = require('method-override')
 // static

@@ -50,6 +50,7 @@ class RegisterController{
                 const save =  new RegisterBook(fromData)
                 save.save();
                 res.redirect('/login')
+                
             }
         })
         .catch(next) 

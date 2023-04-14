@@ -5,9 +5,11 @@ class DetailsController{
         RiviewBook.findOne({slug: req.params.slug})
         .then(detail=>
             res.render('details/show',{detail: mongooseToObject(detail),
-                messageAVT: req.flash('messageAVT'),
                 messageNone: req.flash('messageNone'),
-                messageOut: req.flash('messageOut')
+                messageInline: req.flash('messageInline'),
+                // comment: `${detail.comment[0].name}: ${detail.comment[0].cmt} `
+                comment: mongooseToObject(detail.comment)
+               
             }))
         .catch(next)
     }
@@ -63,6 +65,28 @@ class DetailsController{
         .then(()=>res.redirect('back'))
         .catch(next)
     }
-    
+    comment(req,res,next){
+        const fromData  = req.body
+        const name = req.cookies.name
+        const cmt = fromData.comment
+        // const slug = fromData.slug
+        const comments = {
+            name: name,
+            cmt : cmt
+        }
+        RiviewBook.updateOne({_id: req.params.id},{
+            $push: {
+                comment: comments
+            }
+        })
+        .then(()=> res.redirect('back'))
+        .catch(next)
+        // RiviewBook.updateOne({_id: "6423e730e16170add9ce2e9f"},{
+        //     $push: {
+        //         comment: {name:'123',cmt:'avc'}
+        //     }
+        // })
+    }
+
 }
 module.exports = new DetailsController;

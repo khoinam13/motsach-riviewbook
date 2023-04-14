@@ -5,12 +5,13 @@
             <h1>{{detail.name}}</h1>
             <h5>Thể loại: <a href="">{{detail.category}}</a></h5>
             <h5>Tác giả : <a href="">{{detail.author}}</a></h5>
-            <form class="form-comment" action="">
+            <form class="form-comment" method="post" action="/details/{{detail._id}}/comment">
                 <div class="form-group">
-                <span>Gửi Bình Luận</span>
-                <input type="comment"
-                class="form-control" name="comment" id="comment" aria-describedby="helpId" placeholder="Viết bình luận công khai">
-                <button><i class="fa-regular fa-paper-plane submit-cmt "></i></button>
+                    <span>Gửi Bình Luận</span>
+                    <input type="comment" class="form-control" name="comment" id="comment" aria-describedby="helpId"
+                        placeholder="Viết bình luận công khai">
+                    <input name="slug" type="hidden" value="{{detail.slug}}">
+                    <button><i class="fa-regular fa-paper-plane submit-cmt "></i></button>
                 </div>
             </form>
         </div>
@@ -23,5 +24,21 @@
                 <li><a href="">Y Học - Sức Khỏe</a></li>
             </ul>
         </div>
+    </div>
+    <div class="container mt-5">
+        {{#each comment}}
+        <div class="card p-3">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div class="user d-flex flex-row align-items-center">
+
+                    <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png" width="30" class="user-img rounded-circle mr-2">
+                    <span><small class="font-weight-bold text-primary">{{this.name}}</small>
+                    <small class="font-weight-bold">{{this.cmt}}</small></span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>

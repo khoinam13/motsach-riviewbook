@@ -7,9 +7,8 @@ class siteController{
         .then(books=>res.render('home',
          {
             books: mutipMongooseToObject(books),
-            messageAVT: req.flash('messageAVT'),
             messageNone: req.flash('messageNone'),
-            messageOut: req.flash('messageOut')
+            messageInline: req.flash('messageInline')
          }
         ))
                
@@ -22,7 +21,9 @@ class siteController{
         .then(books=>{
             var booksNew = books.filter(book => book.name.includes(seach))
             res.render('home',{
-                books: mutipMongooseToObject(booksNew)
+                books: mutipMongooseToObject(booksNew),
+                messageNone: req.flash('messageNone'),
+                messageInline: req.flash('messageInline')
             })
         })
         .catch(next)

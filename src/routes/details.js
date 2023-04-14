@@ -7,5 +7,6 @@ route.get('/:slug',DetailsController.show)
 route.put('/:id',DetailsController.update)
 route.delete('/:id',DetailsController.delete)
 route.get('/:id/edit',DetailsController.edit)
+route.post('/:id/comment',DetailsController.comment)
 
 module.exports = route

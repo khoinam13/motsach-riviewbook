@@ -6,9 +6,8 @@ class MeDetailsController{
         RiviewBook.find({})
         .then(books =>res.render('me/details', {
             books: mutipMongooseToObject(books),
-            messageAVT: req.flash('messageAVT'),
             messageNone: req.flash('messageNone'),
-            messageOut: req.flash('messageOut')
+            messageInline: req.flash('messageInline')
         } ))
         .catch(next)
     }

@@ -36,12 +36,13 @@
                 <input name="searchBook" class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
             </form>
-            <ul class="nav justify-content-end ">
+            <ul class="nav justify-content-end" >
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{messageAVT}}</a>
+                    <a class="nav-link" href="#" style="display: none {{messageInline}}"><i class="fa-solid fa-user"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{messageOut}}</a>
+            <ul class="nav justify-content-end" >
+                    <a class="nav-link" href="/login/out" style="display: none {{messageInline}};">Đăng xuất</a>
                 </li>
                 <li class="nav-item" style="display: {{messageNone}};">
                     <a class="nav-link" href="/register">Đăng kí</a>
@@ -49,9 +50,9 @@
                 <li class="nav-item" style="display: {{messageNone}};">
                     <a class="nav-link" href="/login">Đăng Nhập</a>
                 </li>
-                <li class="nav-item">
+                {{!-- <li class="nav-item">
                     <a class="nav-link" href="/login/admin">Admin</a>
-                </li>
+                </li> --}}
             </ul>
     </nav>
 

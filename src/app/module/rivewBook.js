@@ -20,6 +20,7 @@ const RiviewBook = new Schema({
     author:{type:String},
     category:{type:String},
     slug:{type:String, slug:'name'},
+    comment:{type:Array}
     // createdAt:{type:Date, default: Date.now},
     // updatedAt:{type:Date, default: Date.now}
 },{
