@@ -1,6 +1,44 @@
 * {
   box-sizing: border-box; }
 
+.header {
+  margin: 0 10px; }
+
+.header .redirect a {
+  color: #000; }
+
+.home img {
+  width: 100%; }
+
+.home .box-img {
+  display: block;
+  height: 250px; }
+
+.home .card-title {
+  text-decoration: none;
+  color: #000;
+  font-weight: 450;
+  display: block;
+  height: 65px; }
+
+.home .card-text {
+  color: #6495ED;
+  font-weight: 400; }
+
+.footer {
+  margin-top: 30px;
+  background-color: #6c757d; }
+
+.footer li a, .footer .footer-copyright a {
+  text-decoration: none;
+  color: #000; }
+
+.footer li a:hover, .footer .footer-copyright a:hover {
+  font-weight: 500; }
+
+.register .heading {
+  color: #6c757d; }
+
 .details-content img {
   width: 250px;
   float: left;
@@ -48,6 +86,6 @@
 
 .details-content .submit-cmt {
   color: #ffff; }
-.error{
-   color: red;
-}
+
+.error {
+  color: red; }

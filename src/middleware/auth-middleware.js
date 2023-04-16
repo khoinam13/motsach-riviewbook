@@ -1,15 +1,15 @@
 class requireAuth{
-    // userAdmin(req,res,next){
-    //     if(!req.cookies.userAdmin){
-    //         res.redirect('/login/admin')
-    //         return;
-    //     }
-    //     else{
-    //         req.flash('messageNone','none')
-    //         req.flash('messageOut','Đăng xuất')
-    //     }
-    // next()
-    // }
+    userAdmin(req,res,next){
+        if(!req.cookies.userAdmin){
+            res.redirect('/login/admin')
+            return;
+        }
+        else{
+            req.flash('messageNone','none')
+            req.flash('messageInline', 'inline')
+        }
+    next()
+    }
     user(req,res,next){
         if(req.cookies.user){
             req.flash('messageNone','none')

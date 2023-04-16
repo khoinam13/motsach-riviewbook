@@ -1,24 +1,69 @@
-*{
+* {
     box-sizing: border-box;
+   }
+// ================== HEADER ========================
+.header{
+  margin: 0 10px;
 }
-.details-content img{
+.header .redirect a{
+    color: #000;
+}
+// ===================== HOME =========================
+.home img{
+  width: 100%;
+}
+.home .box-img{
+  display: block;
+  height: 250px;
+}
+.home .card-title{
+  text-decoration: none;
+  color: #000;
+  font-weight: 450;
+  display: block;
+  height: 65px;
+}
+.home .card-text{
+  color: 	#6495ED;
+  font-weight: 400;
+  
+}
+//==============  FOOTER =========================
+.footer{
+  margin-top: 30px;
+  background-color: #6c757d;
+}
+
+.footer li a, .footer .footer-copyright a{
+  text-decoration: none;
+  color: #000;
+}
+.footer li a:hover, .footer .footer-copyright a:hover{
+  font-weight: 500;
+}
+// =============r REGISTER ======================
+.register .heading{
+  color:#6c757d;
+}
+
+  .details-content img {
     width: 250px;
     float: left;
-    margin-right: 30px;
-}
-.details-content h1{
+    margin-right: 30px; }
+  
+  .details-content h1 {
     font-size: 2rem;
-    margin-bottom: 30px;
-}
-.details-content h5{
-    font-size: 1rem;
-}
-.details-content .form-comment{
+    margin-bottom: 30px; }
+  
+  .details-content h5 {
+    font-size: 1rem; }
+  
+  .details-content .form-comment {
     width: 60%;
     float: left;
-    margin-top: 20px;
-}
-.details-content .form-comment span{
+    margin-top: 20px; }
+  
+  .details-content .form-comment span {
     background-color: rgba(9, 172, 107, 0.76);
     float: left;
     height: 30px;
@@ -26,9 +71,9 @@
     font-size: 0.9rem;
     color: #ffff;
     border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-.details-content input{
+    border-bottom-left-radius: 5px; }
+  
+  .details-content input {
     float: left;
     width: 70%;
     height: 30px;
@@ -36,24 +81,21 @@
     outline: 0;
     border-radius: 0;
     border-bottom: 1px solid #cccc;
-    border-top: 1px solid #cccc;
-}
-.details-content button{
+    border-top: 1px solid #cccc; }
+  
+  .details-content button {
     border: none;
     float: left;
     width: 30px;
     height: 30px;
-    background-color: rgb(1, 255, 170);
-    outline: 0;
-}
-.details-content .submit-cmt{
-    color: #ffff;
-}
-// header
-.header a{
-    color: black;
-}
-p{
-    color: black;
-}
+    background-color: #01ffaa;
+    outline: 0; }
+  
+  .details-content .submit-cmt {
+    color: #ffff; }
+  .error{
+     color: red;
+  }
+
+
 
