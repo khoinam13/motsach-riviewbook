@@ -26,6 +26,8 @@
 .home .card-text{
   color: 	#6495ED;
   font-weight: 400;
+  display: block;
+  height: 50px;
   
 }
 //==============  FOOTER =========================
@@ -64,7 +66,7 @@
     margin-top: 20px; }
   
   .details-content .form-comment span {
-    background-color: rgba(9, 172, 107, 0.76);
+    background-color: #696767cc;
     float: left;
     height: 30px;
     padding: 5px;
@@ -88,13 +90,23 @@
     float: left;
     width: 30px;
     height: 30px;
-    background-color: #01ffaa;
+    background-color: #696767cc;
     outline: 0; }
   
   .details-content .submit-cmt {
     color: #ffff; }
   .error{
      color: red;
+  }
+  .button-user-none{
+    display: none;
+  }
+  /// ẩn và hiện
+  .none{
+    display: none;
+  }
+  .inline{
+    display: inline;
   }
 
 

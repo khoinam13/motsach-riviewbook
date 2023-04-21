@@ -1,6 +1,6 @@
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Mọt <span style="color: rgb(140, 137, 137);">Sách</span></a>
+        <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="" width="120px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,17 +37,16 @@
                 <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Tìm Kiếm</button>
             </form>
             <ul class="nav justify-content-end redirect" >
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="display: none {{messageInline}}"><i class="fa-solid fa-user"></i></a>
+                <li class="nav-item button-user-none {{messageInline}}">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
                 </li>
-                <li class="nav-item">
-            <ul class="nav justify-content-end redirect" >
-                    <a class="nav-link" href="/login/out" style="display: none {{messageInline}};">Đăng xuất</a>
+                <li class="nav-item button-user-none {{messageInline}}">
+                    <a class="nav-link" href="/login/out">Đăng xuất</a>
                 </li>
-                <li class="nav-item" style="display: {{messageNone}};">
+                <li class="nav-item {{messageNone}}">
                     <a class="nav-link" href="/register">Đăng kí</a>
                 </li>
-                <li class="nav-item" style="display: {{messageNone}};">
+                <li class="nav-item {{messageNone}}">
                     <a class="nav-link" href="/login">Đăng Nhập</a>
                 </li>
                 {{!-- <li class="nav-item">

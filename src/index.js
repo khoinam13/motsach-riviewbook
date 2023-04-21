@@ -39,7 +39,7 @@ app.engine('hbs',handlebars.engine({
     }
 }));
 app.set('view engine','hbs');
-app.set('views', path.join(__dirname, 'resources','views'));
+app.set('views', path.join(__dirname, 'resources','view'));
 // app.get('/',(req,res)=>{
 //     res.render('home')
 // })

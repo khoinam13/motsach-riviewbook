@@ -66,21 +66,28 @@ class DetailsController{
         .catch(next)
     }
     comment(req,res,next){
-        const fromData  = req.body
-        const name = req.cookies.name
-        const cmt = fromData.comment
-        // const slug = fromData.slug
-        const comments = {
-            name: name,
-            cmt : cmt
-        }
-        RiviewBook.updateOne({_id: req.params.id},{
-            $push: {
-                comment: comments
+        if(req.cookies.user){
+            const fromData  = req.body
+            const name = req.cookies.name
+            const cmt = fromData.comment
+            // const slug = fromData.slug
+            const comments = {
+                name: name,
+                cmt : cmt
             }
-        })
-        .then(()=> res.redirect('back'))
-        .catch(next)
+            RiviewBook.updateOne({_id: req.params.id},{
+                $push: {
+                    comment: comments
+                }
+            })
+            .then(()=> res.redirect('back'))
+            .catch(next)
+        }
+        else{
+            res.redirect('/login')
+        }
+        
+
         // RiviewBook.updateOne({_id: "6423e730e16170add9ce2e9f"},{
         //     $push: {
         //         comment: {name:'123',cmt:'avc'}

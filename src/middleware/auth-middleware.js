@@ -12,10 +12,15 @@ class requireAuth{
     }
     user(req,res,next){
         if(req.cookies.user){
+            if(req.flash){
+                req.flash('messageNone','')
+                req.flash('messageInline', '')
+            }
             req.flash('messageNone','none')
             req.flash('messageInline', 'inline')
         }
         next()
     }
+     
 }
 module.exports = new requireAuth;

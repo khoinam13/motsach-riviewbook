@@ -80,6 +80,7 @@ class LoginController{
     }
     out(req,res,next){
         res.clearCookie('user')
+        res.clearCookie('name')
         res.redirect('/')
     }
 }
